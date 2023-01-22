@@ -1,4 +1,4 @@
-import {View, StyleSheet, Alert} from 'react-native';
+import {View, StyleSheet, Alert, Text} from 'react-native';
 import OutlinedButton from '../UI/OutlinedButton';
 import {Colors} from '../../constants/colors';
 import {getCurrentPositionAsync, getForegroundPermissionsAsync, useForegroundPermissions} from 'expo-location';
@@ -37,7 +37,7 @@ const LocationPicker = () => {
   }
   return(
     <View>
-      <View style={styles.mapPreview}></View>
+      <View style={styles.mapPreview}><Text>LocationPreview Not Implemented</Text></View>
         <View style={styles.actions}>
           <OutlinedButton icon="location" onPress={getLocationHandler}>Locate User</OutlinedButton>
           <OutlinedButton icon="map" onPress={pickOnMapHandler}>Pick On Map</OutlinedButton>
