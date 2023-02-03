@@ -11,7 +11,7 @@ import OutlinedButton from '../UI/OutlinedButton';
 import { getMapPreview } from '../../util/location';
 import {useNavigation, useRoute, useIsFocused} from '@react-navigation/native';
 
-function LocationPicker() {
+function LocationPicker({OnLocationPick}) {
   const isFocused = useIsFocused();
   const navigation = useNavigation()
   const route = useRoute()
@@ -79,6 +79,10 @@ function LocationPicker() {
       />
     );
   }
+
+  useEffect(()=> {
+    OnLocationPick(pickedLocation);
+  }, [pickedLocation, OnLocationPick])
 
   return (
     <View>
