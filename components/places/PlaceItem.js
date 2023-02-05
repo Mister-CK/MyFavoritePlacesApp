@@ -6,7 +6,7 @@ const PlaceItem = ({place, onSelect}) => {
       <Image source={{uri: place.imageUri}}/>
       <View>
         <Text>{place.title}</Text>
-        <Text> {place.address}</Text>
+        <Text> {place.location.lng + ' ' + place.location.lat}</Text>
       </View>
     </Pressable>
   );
