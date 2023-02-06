@@ -9,7 +9,7 @@ import {Place} from '../../models/place';
 const PlaceForm = ({onCreatePlace}) => {
   const [enteredTitle, setEnteredTitle] = useState('startTitle');
   const [pickedLocation, setPickedLocation] = useState();
-  const [selectedImage, setSelectedImage] = useState();
+  const [selectedImage, setSelectedImage] = useState('No Image Selected');
   const changeTitle = (enteredText) => {
     setEnteredTitle(enteredText);
   };
@@ -22,8 +22,8 @@ const PlaceForm = ({onCreatePlace}) => {
 
   const savePlaceHandler = () => {
     console.log(enteredTitle, selectedImage, pickedLocation)
-    const placeDate = new Place(enteredTitle, selectedImage || 'No Image Selected', pickedLocation)
-    onCreatePlace(placeDate)
+    const placeData = new Place(enteredTitle, selectedImage, pickedLocation)
+    onCreatePlace(placeData)
   };
   return (
     <ScrollView>
